@@ -3,9 +3,9 @@
     "description": "Integrates CommonMark into Symfony 4 apps.",
     "type": "symfony-bundle",
     "require": {
-        "league/commonmark": "^0.17.5",
+        "league/commonmark": "^1.5.4",
         "php": "^7.0",
-        "symfony/framework-bundle": "^4.0",
+        "symfony/framework-bundle": "^5.0",
         "aptoma/twig-markdown": "^3.0"
     },
     "license": "MIT",
