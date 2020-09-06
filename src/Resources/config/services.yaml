@@ -9,9 +9,14 @@ services:
 
     League\CommonMark\Environment:
         factory: '@Avensome\CommonMarkBundle\EnvironmentFactory'
+        arguments:
+            - [ ]
 
     League\CommonMark\CommonMarkConverter:
         factory: '@Avensome\CommonMarkBundle\ConverterFactory'
+        arguments:
+            - '@League\CommonMark\Environment'
+            - [ ]
 
     Aptoma\Twig\Extension\MarkdownEngine\PHPLeagueCommonMarkEngine:
         arguments:
