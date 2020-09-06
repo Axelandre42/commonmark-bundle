@@ -2,6 +2,7 @@
 
 namespace Avensome\CommonMarkBundle\DependencyInjection;
 
+use Exception;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -12,7 +13,7 @@ class AvensomeCommonMarkExtension extends Extension
     /**
      * @param array $configs
      * @param ContainerBuilder $containerBuilder
-     * @throws \Exception
+     * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $containerBuilder)
     {
