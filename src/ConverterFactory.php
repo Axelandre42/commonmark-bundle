@@ -7,23 +7,8 @@ use League\CommonMark\Environment;
 
 class ConverterFactory
 {
-    /** @var Environment */
-    private $environment;
-    /** @var array */
-    private $config;
-
-    public function __construct(Environment $environment)
+    public function __invoke(Environment $environment, array $config)
     {
-        $this->environment = $environment;
-    }
-
-    public function setConfig(array $config)
-    {
-        $this->config = $config;
-    }
-
-    public function createConverter(): CommonMarkConverter
-    {
-        return new CommonMarkConverter($this->config, $this->environment);
+        return new CommonMarkConverter($config, $environment);
     }
 }

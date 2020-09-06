@@ -24,6 +24,6 @@ class AvensomeCommonMarkExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $converterFactoryDefinition = $containerBuilder->findDefinition('Avensome\CommonMarkBundle\ConverterFactory');
-        $converterFactoryDefinition->addMethodCall('setConfig', [$config['converter_config']]);
+        $converterFactoryDefinition->addArgument($config['converter_config']);
     }
 }

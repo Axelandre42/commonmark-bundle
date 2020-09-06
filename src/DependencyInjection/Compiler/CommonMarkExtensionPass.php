@@ -18,8 +18,9 @@ class CommonMarkExtensionPass implements CompilerPassInterface
         $taggedServices = $containerBuilder->findTaggedServiceIds('avensome_commonmark.extension', true);
 
         $registryDefinition = $containerBuilder->findDefinition(EnvironmentFactory::class);
-        foreach ($taggedServices as $id => $service) {
-            $registryDefinition->addMethodCall('registerExtension', [new Reference($id)]);
+        $registryDefinition->addArgument([]);
+        foreach ($taggedServices as $id => $tag) {
+            $registryDefinition->getArgument(0)[] = new Reference($id);
         }
     }
 }

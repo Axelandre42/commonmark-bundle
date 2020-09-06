@@ -8,10 +8,10 @@ services:
         resource: '../../*'
 
     League\CommonMark\Environment:
-        factory: ['Avensome\CommonMarkBundle\EnvironmentFactory', 'createEnvironment']
+        factory: '@Avensome\CommonMarkBundle\EnvironmentFactory'
 
     League\CommonMark\CommonMarkConverter:
-        factory: ['Avensome\CommonMarkBundle\ConverterFactory', 'createConverter']
+        factory: '@Avensome\CommonMarkBundle\ConverterFactory'
 
     Aptoma\Twig\Extension\MarkdownEngine\PHPLeagueCommonMarkEngine:
         arguments:
